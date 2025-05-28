@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Assets/Scenes/Boot.unity
+    guid: 063390d4c97a91e4bb85c85bab561bca
+  - enabled: 1
+    path: Assets/Assets/Scenes/Startup_Client.unity
+    guid: 03cb978df3114f846aa8bc702e56047a
+  - enabled: 1
+    path: Assets/Assets/Scenes/Startup_Spectator.unity
+    guid: 0265609d8879f8748a53d72a8ee74c20
+  - enabled: 1
+    path: Assets/Assets/Scenes/Startup_Error.unity
+    guid: d07977874fce57d45a1ac0f0c6a53ed3
+  - enabled: 1
+    path: Assets/Assets/Scenes/MainMenu.unity
+    guid: 81818c7cf2543fc4883a568dc01226ce
+  - enabled: 1
+    path: Assets/Assets/Scenes/ReconnectToServer.unity
+    guid: 26fa13e53ebe03048b95c7730d3b50d7
+  - enabled: 1
+    path: Assets/Assets/Scenes/GameOver.unity
+    guid: 4dc8c9e78a4718b46b24581be07ffe2a
+  - enabled: 1
+    path: Assets/Assets/Scenes/Lobby.unity
+    guid: c01496c12d454384cb2aee5ba64043db
+  - enabled: 1
+    path: Assets/Assets/Scenes/Payload_Orange_Art.unity
+    guid: fde98af7cfcc6dd41a525bdb270da059
+  - enabled: 1
+    path: Assets/Assets/Scenes/Payload_Blue_Art.unity
+    guid: 495880f497bffe347a8b5e4b0475db35
+  - enabled: 1
+    path: Assets/Assets/Scenes/Domination_Grey.unity
+    guid: 028fd1016e29e264bbfb1bfc838ba4dc
+  - enabled: 1
+    path: Assets/Assets/Scenes/Domination_Yellow.unity
+    guid: 121197a1ba4507d40bb7f4389e62786b
+  - enabled: 1
+    path: Assets/Assets/Scenes/Sandbox.unity
+    guid: 295aeef669d86964883c9da55f25c1a5
+  - enabled: 1
+    path: Assets/Assets/Scenes/ControlPoint_Stadium.unity
+    guid: a8875fadaafb72e4388f266467186ec7
+  - enabled: 1
+    path: Assets/Assets/Scenes/Deathmatch_Teal_Art.unity
+    guid: 073e86e09600b2f49a678c1d98b38dac
+  - enabled: 1
+    path: Assets/Assets/Scenes/SandboxPerformance.unity
+    guid: 6821d507c54dff542aa8c015d992b9aa
+  - enabled: 1
+    path: Assets/Assets/Scenes/Tutorial_Intro.unity
+    guid: 6746018590b2e174c9bc69b3a40d3b03
+  - enabled: 1
+    path: Assets/Assets/Scenes/CTF_Volcano.unity
+    guid: 210ad766b92839c46bf87871d58d878a
+  - enabled: 1
+    path: Assets/Assets/Scenes/Aim_Sahara.unity
+    guid: b9563f24f68d72d49964fd14545ede13
+  - enabled: 1
+    path: Assets/Assets/Scenes/Elimination_Lunar.unity
+    guid: c10d281196ccfd34e9777f03d15f20be
+  - enabled: 1
+    path: Assets/Assets/Scenes/DeathMatch_Crater.unity
+    guid: 35c6a43cfb7ee9c4fb1c182a029611ee
+  - enabled: 1
+    path: Assets/Assets/Scenes/DeathMatch_Crater_Halloween.unity
+    guid: 639aab57f35106c428e88437850ed425
+  - enabled: 1
+    path: Assets/Assets/Scenes/Payload_Red.unity
+    guid: 6f1f93b06e57e4a4ba4c8b396e506c76
+  - enabled: 1
+    path: Assets/Assets/Scenes/BallMatch_Arena.unity
+    guid: 98d9c5b506a33c143acce71904d3eb82
+  - enabled: 1
+    path: Assets/Assets/Scenes/Domination_Community.unity
+    guid: f4e0b70ef6edb3748a95229aefa49eda
+  - enabled: 1
+    path: Assets/Assets/Scenes/Elimination_Pink.unity
+    guid: 94b5e60be5d7cc8499497f086d45541d
+  - enabled: 1
+    path: Assets/Assets/Scenes/Tutorial_Tdm.unity
+    guid: 0b9e77cc3afb2ab4ab076206e71cf005
+  - enabled: 1
+    path: Assets/Assets/Scenes/CTF_Volcano_Winter.unity
+    guid: cdae9d75c9709c445bae9ddd095d430e
+  - enabled: 1
+    path: Assets/Assets/Scenes/Payload_Grey.unity
+    guid: feb3c34ef1649f24086be4a1677fd05b
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
