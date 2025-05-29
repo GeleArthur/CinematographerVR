@@ -171,8 +171,8 @@ namespace Trev
         {
             EditorUtility.DisplayProgressBar("Decombiner - Scene", "Decombining scene...", 0f);
 
-            var mRenderers = GameObject.FindObjectsOfType<MeshRenderer>().Where(m => m.isPartOfStaticBatch).ToArray();
-
+            var mRenderers = FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None).Where(m => m.isPartOfStaticBatch).ToArray();
+            
             for (int i = 0; i < mRenderers.Length; i++)
             {
                 try

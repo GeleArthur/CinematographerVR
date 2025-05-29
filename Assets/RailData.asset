@@ -12,3 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e599dc55f98f75a488d5afe32978a55b, type: 3}
   m_Name: RailData
   m_EditorClassIdentifier: 
+  _nodes:
+  - _position: {x: -16.15898, y: 0, z: -40.035828}
+  - _position: {x: -19.541662, y: 0, z: -49.864407}
+  - _position: {x: -18.923025, y: 0, z: -76.17419}
+  _connections:
+    m_Keys:
+    - _position: {x: -16.15898, y: 0, z: -40.035828}
+    - _position: {x: -19.541662, y: 0, z: -49.864407}
+    - _position: {x: -18.923025, y: 0, z: -76.17419}
+    m_Values:
+    - _nodes:
+      - _position: {x: -19.541662, y: 0, z: -49.864407}
+    - _nodes:
+      - _position: {x: -16.15898, y: 0, z: -40.035828}
+      - _position: {x: -18.923025, y: 0, z: -76.17419}
+    - _nodes:
+      - _position: {x: -19.541662, y: 0, z: -49.864407}
