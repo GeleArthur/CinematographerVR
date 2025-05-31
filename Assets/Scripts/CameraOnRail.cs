@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 class NodeRecord
 {
@@ -57,43 +58,63 @@ public class CameraOnRail : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, (_target.position - transform.position));
-        // if (Physics.Raycast(transform.position, transform.forward, (_target.position - transform.position).magnitude))
+
+        Vector3 left = _target.position - transform.right;
+        if (Physics.Raycast(_target.position, -transform.right, out RaycastHit hit))
         {
-            (Node, Node, float) closest = GetClosestPointToTarget(_target.position);
-
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawSphere(Vector3.Lerp(closest.Item1.Position, closest.Item2.Position, closest.Item3), 0.3f);
-            
-            int endNodeIndex = _railData.Nodes.FindIndex(e => e == closest.Item2);
-            List<int> path = FindPathToNode(_fromIndex, endNodeIndex);
-
-            Gizmos.color = Color.red;
-            for (int i = 0; i < path.Count-1; i++)
-            {
-                Gizmos.DrawLine(_railData.Nodes[path[i]].Position, _railData.Nodes[path[i + 1]].Position);
-            }
-
-            if (path.Count > 0)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
-
-                if (path.Count > 1)
-                {
-                    if (Vector3.Distance(transform.position, _railData.Nodes[path[0]].Position) < 0.5f)
-                    {
-                        _fromIndex = path[1];
-                    }
-                }
-
-            }
+            left = hit.point;
+        }
+        
+        Vector3 right = _target.position + transform.right;
+        if (Physics.Raycast(_target.position, transform.right, out hit))
+        {
+            right = hit.point;
+        }
+        
+        if (Physics.Raycast(transform.position, _target.position - transform.position) || 
+            Physics.Raycast(transform.position, left - transform.position) ||
+            Physics.Raycast(transform.position, right - transform.position)
+            )
+        {
+            MoveCamera();
         }
         
     
         transform.LookAt(_target);
     }
-    
-    
-    private List<int> FindPathToNode(int startNodeIndex, int endNodeIndex)
+
+    private void MoveCamera()
+    {
+        (Node, Node, float) closest = GetClosestPointToTarget(_target.position);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere(Vector3.Lerp(closest.Item1.Position, closest.Item2.Position, closest.Item3), 0.3f);
+            
+        int endNodeIndex = _railData.Nodes.FindIndex(e => e == closest.Item2);
+        List<int> path = FindPathToNode(_fromIndex, endNodeIndex, _railData.Connections);
+
+        Gizmos.color = Color.red;
+        for (int i = 0; i < path.Count-1; i++)
+        {
+            Gizmos.DrawLine(_railData.Nodes[path[i]].Position, _railData.Nodes[path[i + 1]].Position);
+        }
+        
+        if (path.Count > 0)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
+
+            if (path.Count > 1)
+            {
+                if (Vector3.Distance(transform.position, _railData.Nodes[path[0]].Position) < 0.5f)
+                {
+                    _fromIndex = path[1];
+                }
+            }
+        }
+    }
+
+
+    private List<int> FindPathToNode(int startNodeIndex, int endNodeIndex, SerializedDictionary<int, ListOfNode> graph)
     {
         Priority_Queue.SimplePriorityQueue<int> openList = new();
         Dictionary<int, int> cameFrom = new();
@@ -122,7 +143,7 @@ public class CameraOnRail : MonoBehaviour
                 return path;
             }
 
-            foreach (Connection neighbor in _railData.Connections[current].Nodes)
+            foreach (Connection neighbor in graph[current].Nodes)
             {
                 float newCost = costSoFar[current] + neighbor.Weight;
                 if (!cameFrom.ContainsKey(neighbor.NodeIndex) || newCost < costSoFar[current])
@@ -131,8 +152,6 @@ public class CameraOnRail : MonoBehaviour
                     cameFrom[neighbor.NodeIndex] = current;
                     costSoFar[neighbor.NodeIndex] = newCost;
                 }
-                
-
             }
         }
         

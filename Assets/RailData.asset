@@ -16,11 +16,11 @@ MonoBehaviour:
   - Position: {x: -16.010035, y: 3.730836, z: -49.98233}
   - Position: {x: -7.02315, y: 5.854578, z: -37.28872}
   - Position: {x: -9.600618, y: 8.5411, z: -40.41959}
-  - Position: {x: -16.34108, y: 3.8281991, z: -66.741844}
-  - Position: {x: -13.829594, y: 3.3665974, z: -64.41667}
-  - Position: {x: -4.346446, y: 1.5335764, z: -60.254395}
+  - Position: {x: -15.025136, y: 3.8281991, z: -70.74734}
+  - Position: {x: -12.666325, y: 3.3665974, z: -64.41667}
+  - Position: {x: -4.346446, y: 1.5335764, z: -60.512836}
   - Position: {x: -3.000441, y: 7.5959525, z: -50.249207}
-  - Position: {x: -0.901899, y: 1.5085642, z: -69.399536}
+  - Position: {x: -0.901899, y: 1.5085642, z: -70.89759}
   - Position: {x: -25.415619, y: 7.131072, z: -80.2208}
   - Position: {x: -23.125881, y: 3.4844356, z: -63.940975}
   - Position: {x: -23.232943, y: 5.4506044, z: -44.36052}
@@ -32,8 +32,21 @@ MonoBehaviour:
   - Position: {x: 3.6087463, y: 6.217255, z: -12.126353}
   - Position: {x: 1.972847, y: 4.49337, z: -28.342201}
   - Position: {x: -22.54408, y: 7.136768, z: -10.995198}
+  - Position: {x: -0.62270415, y: 3.5981264, z: -80.93164}
+  - Position: {x: -10.820438, y: 7.8282003, z: -82.347916}
+  - Position: {x: -10.028691, y: 3.8840032, z: -70.260956}
+  - Position: {x: -1.1476002, y: 1.5874468, z: -68.71352}
+  - Position: {x: -15.9425745, y: 3.5926418, z: -64.74974}
+  - Position: {x: 13.919804, y: 4.3889675, z: -72.17008}
+  - Position: {x: 13.615131, y: 4.0951767, z: -81.19083}
+  - Position: {x: 21.719946, y: 8.750913, z: -96.63557}
+  - Position: {x: 28.463331, y: 5.071895, z: -81.58029}
+  - Position: {x: 28.322334, y: 10.5579605, z: -97.07549}
+  - Position: {x: 28.513031, y: 6.1044354, z: -114.24079}
+  - Position: {x: 21.960707, y: 8.114941, z: -110.42621}
+  - Position: {x: 28.845423, y: 9.418089, z: -107.231064}
   Connections:
-    m_Keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
+    m_Keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000
     m_Values:
     - Nodes:
       - NodeIndex: 1
@@ -41,7 +54,7 @@ MonoBehaviour:
       - NodeIndex: 2
         Weight: 12.476588
       - NodeIndex: 3
-        Weight: 16.763065
+        Weight: 20.78858
       - NodeIndex: 8
         Weight: 31.849518
       - NodeIndex: 10
@@ -58,6 +71,8 @@ MonoBehaviour:
         Weight: 28.147125
       - NodeIndex: 18
         Weight: 39.677334
+      - NodeIndex: 23
+        Weight: 14.768211
     - Nodes:
       - NodeIndex: 0
         Weight: 15.697202
@@ -100,36 +115,54 @@ MonoBehaviour:
         Weight: 17.210245
     - Nodes:
       - NodeIndex: 0
-        Weight: 16.763065
-      - NodeIndex: 4
-        Weight: 3.4535584
-      - NodeIndex: 9
-        Weight: 7.348236
+        Weight: 20.78858
+      - NodeIndex: 7
+        Weight: 14.313249
+      - NodeIndex: 8
+        Weight: 14.443603
       - NodeIndex: 10
-        Weight: 23.474533
+        Weight: 27.681482
+      - NodeIndex: 19
+        Weight: 17.640947
+      - NodeIndex: 20
+        Weight: 12.971233
+      - NodeIndex: 21
+        Weight: 5.0203724
+      - NodeIndex: 23
+        Weight: 6.071931
+      - NodeIndex: 24
+        Weight: 28.98531
+      - NodeIndex: 25
+        Weight: 30.486105
+      - NodeIndex: 27
+        Weight: 44.83466
     - Nodes:
-      - NodeIndex: 3
-        Weight: 3.4535584
       - NodeIndex: 5
-        Weight: 10.517348
-      - NodeIndex: 7
-        Weight: 13.978787
+        Weight: 9.371247
       - NodeIndex: 9
-        Weight: 9.309196
+        Weight: 10.471031
+      - NodeIndex: 22
+        Weight: 12.422128
+      - NodeIndex: 23
+        Weight: 3.3008854
     - Nodes:
       - NodeIndex: 4
-        Weight: 10.517348
+        Weight: 9.371247
       - NodeIndex: 6
-        Weight: 11.775734
+        Weight: 11.996093
       - NodeIndex: 7
-        Weight: 9.772367
+        Weight: 10.941145
+      - NodeIndex: 22
+        Weight: 8.802651
+      - NodeIndex: 23
+        Weight: 12.516441
     - Nodes:
       - NodeIndex: 1
         Weight: 13.681696
       - NodeIndex: 2
         Weight: 11.877584
       - NodeIndex: 5
-        Weight: 11.775734
+        Weight: 11.996093
       - NodeIndex: 12
         Weight: 23.467243
       - NodeIndex: 13
@@ -139,17 +172,33 @@ MonoBehaviour:
       - NodeIndex: 17
         Weight: 22.677666
     - Nodes:
-      - NodeIndex: 4
-        Weight: 13.978787
+      - NodeIndex: 3
+        Weight: 14.313249
       - NodeIndex: 5
-        Weight: 9.772367
+        Weight: 10.941145
       - NodeIndex: 8
-        Weight: 27.37946
+        Weight: 26.822702
+      - NodeIndex: 19
+        Weight: 10.253116
+      - NodeIndex: 20
+        Weight: 16.414175
+      - NodeIndex: 21
+        Weight: 9.452319
+      - NodeIndex: 22
+        Weight: 2.1992664
+      - NodeIndex: 24
+        Weight: 15.152519
+      - NodeIndex: 25
+        Weight: 17.982922
+      - NodeIndex: 27
+        Weight: 31.450504
     - Nodes:
       - NodeIndex: 0
         Weight: 31.849518
+      - NodeIndex: 3
+        Weight: 14.443603
       - NodeIndex: 7
-        Weight: 27.37946
+        Weight: 26.822702
       - NodeIndex: 9
         Weight: 16.839645
       - NodeIndex: 10
@@ -160,13 +209,23 @@ MonoBehaviour:
         Weight: 49.759586
       - NodeIndex: 18
         Weight: 69.28513
+      - NodeIndex: 19
+        Weight: 25.053455
+      - NodeIndex: 20
+        Weight: 14.765836
+      - NodeIndex: 21
+        Weight: 18.614498
+      - NodeIndex: 24
+        Weight: 40.24436
+      - NodeIndex: 25
+        Weight: 39.160656
+      - NodeIndex: 27
+        Weight: 53.935425
     - Nodes:
       - NodeIndex: 1
         Weight: 31.229126
-      - NodeIndex: 3
-        Weight: 7.348236
       - NodeIndex: 4
-        Weight: 9.309196
+        Weight: 10.471031
       - NodeIndex: 8
         Weight: 16.839645
       - NodeIndex: 10
@@ -179,6 +238,10 @@ MonoBehaviour:
         Weight: 38.40837
       - NodeIndex: 18
         Weight: 53.07479
+      - NodeIndex: 20
+        Weight: 22.563414
+      - NodeIndex: 23
+        Weight: 7.229502
     - Nodes:
       - NodeIndex: 0
         Weight: 9.313043
@@ -187,7 +250,7 @@ MonoBehaviour:
       - NodeIndex: 2
         Weight: 14.523166
       - NodeIndex: 3
-        Weight: 23.474533
+        Weight: 27.681482
       - NodeIndex: 8
         Weight: 35.965927
       - NodeIndex: 9
@@ -326,3 +389,214 @@ MonoBehaviour:
         Weight: 13.1403055
       - NodeIndex: 16
         Weight: 26.193422
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 17.640947
+      - NodeIndex: 7
+        Weight: 10.253116
+      - NodeIndex: 8
+        Weight: 25.053455
+      - NodeIndex: 20
+        Weight: 11.13073
+      - NodeIndex: 21
+        Weight: 14.227362
+      - NodeIndex: 22
+        Weight: 12.393583
+      - NodeIndex: 24
+        Weight: 16.996319
+      - NodeIndex: 25
+        Weight: 14.248867
+      - NodeIndex: 27
+        Weight: 29.130571
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 12.971233
+      - NodeIndex: 7
+        Weight: 16.414175
+      - NodeIndex: 8
+        Weight: 14.765836
+      - NodeIndex: 9
+        Weight: 22.563414
+      - NodeIndex: 19
+        Weight: 11.13073
+      - NodeIndex: 21
+        Weight: 12.738844
+      - NodeIndex: 22
+        Weight: 17.84398
+      - NodeIndex: 23
+        Weight: 18.811485
+      - NodeIndex: 24
+        Weight: 26.972137
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 5.0203724
+      - NodeIndex: 7
+        Weight: 9.452319
+      - NodeIndex: 8
+        Weight: 18.614498
+      - NodeIndex: 19
+        Weight: 14.227362
+      - NodeIndex: 20
+        Weight: 12.738844
+      - NodeIndex: 24
+        Weight: 24.029776
+      - NodeIndex: 25
+        Weight: 26.048742
+      - NodeIndex: 27
+        Weight: 40.139435
+    - Nodes:
+      - NodeIndex: 4
+        Weight: 12.422128
+      - NodeIndex: 5
+        Weight: 8.802651
+      - NodeIndex: 7
+        Weight: 2.1992664
+      - NodeIndex: 19
+        Weight: 12.393583
+      - NodeIndex: 20
+        Weight: 17.84398
+      - NodeIndex: 23
+        Weight: 15.447446
+      - NodeIndex: 25
+        Weight: 19.491285
+      - NodeIndex: 28
+        Weight: 41.87301
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 14.768211
+      - NodeIndex: 3
+        Weight: 6.071931
+      - NodeIndex: 4
+        Weight: 3.3008854
+      - NodeIndex: 5
+        Weight: 12.516441
+      - NodeIndex: 9
+        Weight: 7.229502
+      - NodeIndex: 20
+        Weight: 18.811485
+      - NodeIndex: 22
+        Weight: 15.447446
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 28.98531
+      - NodeIndex: 7
+        Weight: 15.152519
+      - NodeIndex: 8
+        Weight: 40.24436
+      - NodeIndex: 19
+        Weight: 16.996319
+      - NodeIndex: 20
+        Weight: 26.972137
+      - NodeIndex: 21
+        Weight: 24.029776
+      - NodeIndex: 25
+        Weight: 9.030668
+      - NodeIndex: 28
+        Weight: 29.42395
+      - NodeIndex: 29
+        Weight: 44.562874
+      - NodeIndex: 31
+        Weight: 38.43616
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 30.486105
+      - NodeIndex: 7
+        Weight: 17.982922
+      - NodeIndex: 8
+        Weight: 39.160656
+      - NodeIndex: 19
+        Weight: 14.248867
+      - NodeIndex: 21
+        Weight: 26.048742
+      - NodeIndex: 22
+        Weight: 19.491285
+      - NodeIndex: 24
+        Weight: 9.030668
+      - NodeIndex: 27
+        Weight: 14.8853855
+      - NodeIndex: 28
+        Weight: 22.591858
+    - Nodes:
+      - NodeIndex: 27
+        Weight: 16.901766
+      - NodeIndex: 28
+        Weight: 6.859336
+      - NodeIndex: 29
+        Weight: 19.05502
+      - NodeIndex: 30
+        Weight: 13.807398
+      - NodeIndex: 31
+        Weight: 12.786012
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 44.83466
+      - NodeIndex: 7
+        Weight: 31.450504
+      - NodeIndex: 8
+        Weight: 53.935425
+      - NodeIndex: 19
+        Weight: 29.130571
+      - NodeIndex: 21
+        Weight: 40.139435
+      - NodeIndex: 25
+        Weight: 14.8853855
+      - NodeIndex: 26
+        Weight: 16.901766
+      - NodeIndex: 28
+        Weight: 16.43831
+      - NodeIndex: 29
+        Weight: 32.676853
+      - NodeIndex: 30
+        Weight: 29.725935
+    - Nodes:
+      - NodeIndex: 22
+        Weight: 41.87301
+      - NodeIndex: 24
+        Weight: 29.42395
+      - NodeIndex: 25
+        Weight: 22.591858
+      - NodeIndex: 26
+        Weight: 6.859336
+      - NodeIndex: 27
+        Weight: 16.43831
+      - NodeIndex: 29
+        Weight: 17.734648
+      - NodeIndex: 30
+        Weight: 14.989338
+      - NodeIndex: 31
+        Weight: 10.232719
+    - Nodes:
+      - NodeIndex: 24
+        Weight: 44.562874
+      - NodeIndex: 26
+        Weight: 19.05502
+      - NodeIndex: 27
+        Weight: 32.676853
+      - NodeIndex: 28
+        Weight: 17.734648
+      - NodeIndex: 30
+        Weight: 7.843859
+      - NodeIndex: 31
+        Weight: 7.7606096
+    - Nodes:
+      - NodeIndex: 26
+        Weight: 13.807398
+      - NodeIndex: 27
+        Weight: 29.725935
+      - NodeIndex: 28
+        Weight: 14.989338
+      - NodeIndex: 29
+        Weight: 7.843859
+      - NodeIndex: 31
+        Weight: 7.701069
+    - Nodes:
+      - NodeIndex: 24
+        Weight: 38.43616
+      - NodeIndex: 26
+        Weight: 12.786012
+      - NodeIndex: 28
+        Weight: 10.232719
+      - NodeIndex: 29
+        Weight: 7.7606096
+      - NodeIndex: 30
+        Weight: 7.701069
