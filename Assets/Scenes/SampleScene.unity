@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _railData: {fileID: 11400000, guid: 1ffabfd137231c34997950393b6d7a77, type: 2}
   _target: {fileID: 467440741}
+  _speed: 1
 --- !u!114 &184301847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +374,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184301845}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0001767093, y: 0.9986819, z: 0.05121077, w: 0.0034460798}
-  m_LocalPosition: {x: -21.16, y: 3.36, z: -32.21}
+  m_LocalRotation: {x: 0.0073433397, y: -0.07777207, z: 0.0005728574, w: 0.99694395}
+  m_LocalPosition: {x: -3.3736396, y: 1.6520087, z: -64.06653}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -690,7 +691,7 @@ Transform:
   m_GameObject: {fileID: 467440737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.96, y: 6.34, z: -61.19}
+  m_LocalPosition: {x: -7.5, y: 1.26, z: -37.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

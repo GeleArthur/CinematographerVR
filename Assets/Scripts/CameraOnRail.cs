@@ -23,6 +23,7 @@ public class CameraOnRail : MonoBehaviour
 {
     [SerializeField] private RailData _railData = null;
     [SerializeField] private Transform _target = null;
+    [SerializeField] private float _speed = 0.1f;
 
     private int _fromIndex = 0;
     private int _toIndex = 1;
@@ -72,42 +73,25 @@ public class CameraOnRail : MonoBehaviour
                 Gizmos.DrawLine(_railData.Nodes[path[i]].Position, _railData.Nodes[path[i + 1]].Position);
             }
 
-            // _fromIndex = path[0];
-            // Gizmos.color = Color.green;
-            //Gizmos.DrawWireCube(_railData.Nodes[_fromIndex].Position, new Vector3(1, 1, 1));
-            // Gizmos.DrawWireCube(_railData.Nodes[endNodeIndex].Position, new Vector3(1, 1, 1));
-            // _toIndex = path[1];
-            //
-            // _distance += Time.deltaTime / 10000;
-            //
-            // if (_distance > 1)
-            // {
-            //     _fromIndex = _toIndex;
-            //     _toIndex = path[2];
-            //     _distance = 0;
-            // }
+            if (path.Count > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
 
-            // UpdatePosition();
-            // Gizmos.color = Color.green;
-            // var result = GetClosestPointToTarget(_target.position);
-            // Vector3 finalLocation = result.Item1.Position + (result.Item2.Position - result.Item1.Position).normalized * result.Item3;
-            // Gizmos.DrawSphere(finalLocation, 0.6f);
-            // transform.position = Vector3.MoveTowards(transform.position, finalLocation, 0.3f);
+                if (path.Count > 1)
+                {
+                    if (Vector3.Distance(transform.position, _railData.Nodes[path[0]].Position) < 0.5f)
+                    {
+                        _fromIndex = path[1];
+                    }
+                }
+
+            }
         }
         
     
         transform.LookAt(_target);
     }
     
-    
-
-    private void UpdatePosition()
-    {
-        transform.position = Vector3.Lerp(
-            _railData.Nodes[_fromIndex].Position, 
-            _railData.Nodes[_toIndex].Position,
-            _distance);
-    }
     
     private List<int> FindPathToNode(int startNodeIndex, int endNodeIndex)
     {
