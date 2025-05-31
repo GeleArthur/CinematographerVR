@@ -111,15 +111,12 @@ public class CameraOnRail : MonoBehaviour
     
     private List<int> FindPathToNode(int startNodeIndex, int endNodeIndex)
     {
-        Queue<int> openList = new();
+        Priority_Queue.SimplePriorityQueue<int> openList = new();
         Dictionary<int, int> cameFrom = new();
         Dictionary<int, float> costSoFar = new();
-        
-        // public Dictionary<Location, Location> cameFrom = new Dictionary<Location, Location>();
-        // public Dictionary<Location, double> costSoFar = new Dictionary<Location, double>();
 
         costSoFar[startNodeIndex] = 0;
-        openList.Enqueue(startNodeIndex);
+        openList.Enqueue(startNodeIndex, 0);
         
         while (openList.Count > 0)
         {
@@ -143,11 +140,10 @@ public class CameraOnRail : MonoBehaviour
 
             foreach (Connection neighbor in _railData.Connections[current].Nodes)
             {
-                //if (cameFrom.ContainsKey(neighbor.NodeIndex)) continue;
                 float newCost = costSoFar[current] + neighbor.Weight;
                 if (!cameFrom.ContainsKey(neighbor.NodeIndex) || newCost < costSoFar[current])
                 {
-                    openList.Enqueue(neighbor.NodeIndex);
+                    openList.Enqueue(neighbor.NodeIndex, newCost + Heuristic(current, neighbor.NodeIndex));
                     cameFrom[neighbor.NodeIndex] = current;
                     costSoFar[neighbor.NodeIndex] = newCost;
                 }
@@ -157,6 +153,11 @@ public class CameraOnRail : MonoBehaviour
         }
         
         return new List<int>();
+    }
+    
+    float Heuristic(int start, int stop)
+    {
+        return (_railData.Nodes[stop].Position - _railData.Nodes[start].Position).magnitude;
     }
     
     private (Node, Node, float) GetClosestPointToTarget(Vector3 target)

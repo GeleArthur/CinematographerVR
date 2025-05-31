@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: RailData
   m_EditorClassIdentifier: 
   Nodes:
-  - Position: {x: -16.45132, y: 4.124419, z: -49.98233}
+  - Position: {x: -16.010035, y: 3.730836, z: -49.98233}
   - Position: {x: -7.02315, y: 5.854578, z: -37.28872}
   - Position: {x: -9.600618, y: 8.5411, z: -40.41959}
-  - Position: {x: -16.34108, y: 3.8281991, z: -69.41602}
+  - Position: {x: -16.34108, y: 3.8281991, z: -66.741844}
   - Position: {x: -13.829594, y: 3.3665974, z: -64.41667}
   - Position: {x: -4.346446, y: 1.5335764, z: -60.254395}
   - Position: {x: -3.000441, y: 7.5959525, z: -50.249207}
@@ -37,28 +37,30 @@ MonoBehaviour:
     m_Values:
     - Nodes:
       - NodeIndex: 1
-        Weight: 15.906339
+        Weight: 15.697202
       - NodeIndex: 2
-        Weight: 12.565237
+        Weight: 12.476588
       - NodeIndex: 3
-        Weight: 19.436262
+        Weight: 16.763065
+      - NodeIndex: 8
+        Weight: 31.849518
       - NodeIndex: 10
-        Weight: 8.908082
+        Weight: 9.313043
       - NodeIndex: 11
-        Weight: 17.149813
+        Weight: 17.458405
       - NodeIndex: 12
-        Weight: 19.171528
+        Weight: 19.269003
       - NodeIndex: 13
-        Weight: 23.107746
+        Weight: 22.913408
       - NodeIndex: 14
-        Weight: 20.347647
+        Weight: 20.250917
       - NodeIndex: 17
-        Weight: 28.423252
+        Weight: 28.147125
       - NodeIndex: 18
-        Weight: 39.57515
+        Weight: 39.677334
     - Nodes:
       - NodeIndex: 0
-        Weight: 15.906339
+        Weight: 15.697202
       - NodeIndex: 2
         Weight: 4.8644724
       - NodeIndex: 6
@@ -79,7 +81,7 @@ MonoBehaviour:
         Weight: 12.760134
     - Nodes:
       - NodeIndex: 0
-        Weight: 12.565237
+        Weight: 12.476588
       - NodeIndex: 1
         Weight: 4.8644724
       - NodeIndex: 6
@@ -98,14 +100,16 @@ MonoBehaviour:
         Weight: 17.210245
     - Nodes:
       - NodeIndex: 0
-        Weight: 19.436262
-      - NodeIndex: 8
-        Weight: 14.491359
+        Weight: 16.763065
+      - NodeIndex: 4
+        Weight: 3.4535584
+      - NodeIndex: 9
+        Weight: 7.348236
       - NodeIndex: 10
-        Weight: 26.03667
-      - NodeIndex: 11
-        Weight: 35.35226
+        Weight: 23.474533
     - Nodes:
+      - NodeIndex: 3
+        Weight: 3.4535584
       - NodeIndex: 5
         Weight: 10.517348
       - NodeIndex: 7
@@ -142,8 +146,8 @@ MonoBehaviour:
       - NodeIndex: 8
         Weight: 27.37946
     - Nodes:
-      - NodeIndex: 3
-        Weight: 14.491359
+      - NodeIndex: 0
+        Weight: 31.849518
       - NodeIndex: 7
         Weight: 27.37946
       - NodeIndex: 9
@@ -159,6 +163,8 @@ MonoBehaviour:
     - Nodes:
       - NodeIndex: 1
         Weight: 31.229126
+      - NodeIndex: 3
+        Weight: 7.348236
       - NodeIndex: 4
         Weight: 9.309196
       - NodeIndex: 8
@@ -175,13 +181,13 @@ MonoBehaviour:
         Weight: 53.07479
     - Nodes:
       - NodeIndex: 0
-        Weight: 8.908082
+        Weight: 9.313043
       - NodeIndex: 1
         Weight: 17.689854
       - NodeIndex: 2
         Weight: 14.523166
       - NodeIndex: 3
-        Weight: 26.03667
+        Weight: 23.474533
       - NodeIndex: 8
         Weight: 35.965927
       - NodeIndex: 9
@@ -200,13 +206,11 @@ MonoBehaviour:
         Weight: 33.415
     - Nodes:
       - NodeIndex: 0
-        Weight: 17.149813
+        Weight: 17.458405
       - NodeIndex: 1
         Weight: 16.860598
       - NodeIndex: 2
         Weight: 14.73045
-      - NodeIndex: 3
-        Weight: 35.35226
       - NodeIndex: 8
         Weight: 45.095566
       - NodeIndex: 9
@@ -221,7 +225,7 @@ MonoBehaviour:
         Weight: 14.779604
     - Nodes:
       - NodeIndex: 0
-        Weight: 19.171528
+        Weight: 19.269003
       - NodeIndex: 1
         Weight: 11.671849
       - NodeIndex: 2
@@ -244,7 +248,7 @@ MonoBehaviour:
         Weight: 21.075794
     - Nodes:
       - NodeIndex: 0
-        Weight: 23.107746
+        Weight: 22.913408
       - NodeIndex: 1
         Weight: 7.2281833
       - NodeIndex: 2
@@ -263,7 +267,7 @@ MonoBehaviour:
         Weight: 6.489867
     - Nodes:
       - NodeIndex: 0
-        Weight: 20.347647
+        Weight: 20.250917
       - NodeIndex: 1
         Weight: 6.80738
       - NodeIndex: 2
@@ -296,7 +300,7 @@ MonoBehaviour:
         Weight: 26.193422
     - Nodes:
       - NodeIndex: 0
-        Weight: 28.423252
+        Weight: 28.147125
       - NodeIndex: 1
         Weight: 12.760134
       - NodeIndex: 2
@@ -309,7 +313,7 @@ MonoBehaviour:
         Weight: 16.38907
     - Nodes:
       - NodeIndex: 0
-        Weight: 39.57515
+        Weight: 39.677334
       - NodeIndex: 8
         Weight: 69.28513
       - NodeIndex: 9

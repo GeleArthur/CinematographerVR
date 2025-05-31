@@ -18,14 +18,14 @@ public class PointEditor : MonoBehaviour
             Gizmos.DrawWireSphere(node.Position, 0.3f);
         }
         
-        // Gizmos.color = Color.cyan;
-        // foreach (var from in _dataToEdit.Connections)
-        // {
-        //     foreach (var to in from.Value.Nodes)
-        //     {
-        //         Gizmos.DrawLine(_dataToEdit.Nodes[from.Key].Position, _dataToEdit.Nodes[to.NodeIndex].Position);
-        //     }
-        // }
+        Gizmos.color = Color.cyan;
+        foreach (var from in _dataToEdit.Connections)
+        {
+            foreach (var to in from.Value.Nodes)
+            {
+                Gizmos.DrawLine(_dataToEdit.Nodes[from.Key].Position, _dataToEdit.Nodes[to.NodeIndex].Position);
+            }
+        }
     }
 }
 
