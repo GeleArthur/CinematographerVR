@@ -12,20 +12,313 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e599dc55f98f75a488d5afe32978a55b, type: 3}
   m_Name: RailData
   m_EditorClassIdentifier: 
-  _nodes:
-  - _position: {x: -16.15898, y: 0, z: -40.035828}
-  - _position: {x: -19.541662, y: 0, z: -49.864407}
-  - _position: {x: -18.923025, y: 0, z: -76.17419}
-  _connections:
-    m_Keys:
-    - _position: {x: -16.15898, y: 0, z: -40.035828}
-    - _position: {x: -19.541662, y: 0, z: -49.864407}
-    - _position: {x: -18.923025, y: 0, z: -76.17419}
+  Nodes:
+  - Position: {x: -16.45132, y: 4.124419, z: -49.98233}
+  - Position: {x: -7.02315, y: 5.854578, z: -37.28872}
+  - Position: {x: -9.600618, y: 8.5411, z: -40.41959}
+  - Position: {x: -16.34108, y: 3.8281991, z: -69.41602}
+  - Position: {x: -13.829594, y: 3.3665974, z: -64.41667}
+  - Position: {x: -4.346446, y: 1.5335764, z: -60.254395}
+  - Position: {x: -3.000441, y: 7.5959525, z: -50.249207}
+  - Position: {x: -0.901899, y: 1.5085642, z: -69.399536}
+  - Position: {x: -25.415619, y: 7.131072, z: -80.2208}
+  - Position: {x: -23.125881, y: 3.4844356, z: -63.940975}
+  - Position: {x: -23.232943, y: 5.4506044, z: -44.36052}
+  - Position: {x: -23.354631, y: 9.507666, z: -35.235092}
+  - Position: {x: -16.74174, y: 8.114756, z: -31.232922}
+  - Position: {x: -3.10813, y: 7.278776, z: -31.381866}
+  - Position: {x: -9.532659, y: 6.4485664, z: -30.988722}
+  - Position: {x: -9.478377, y: 6.2936893, z: -12.110653}
+  - Position: {x: 3.6087463, y: 6.217255, z: -12.126353}
+  - Position: {x: 1.972847, y: 4.49337, z: -28.342201}
+  - Position: {x: -22.54408, y: 7.136768, z: -10.995198}
+  Connections:
+    m_Keys: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
     m_Values:
-    - _nodes:
-      - _position: {x: -19.541662, y: 0, z: -49.864407}
-    - _nodes:
-      - _position: {x: -16.15898, y: 0, z: -40.035828}
-      - _position: {x: -18.923025, y: 0, z: -76.17419}
-    - _nodes:
-      - _position: {x: -19.541662, y: 0, z: -49.864407}
+    - Nodes:
+      - NodeIndex: 1
+        Weight: 15.906339
+      - NodeIndex: 2
+        Weight: 12.565237
+      - NodeIndex: 3
+        Weight: 19.436262
+      - NodeIndex: 10
+        Weight: 8.908082
+      - NodeIndex: 11
+        Weight: 17.149813
+      - NodeIndex: 12
+        Weight: 19.171528
+      - NodeIndex: 13
+        Weight: 23.107746
+      - NodeIndex: 14
+        Weight: 20.347647
+      - NodeIndex: 17
+        Weight: 28.423252
+      - NodeIndex: 18
+        Weight: 39.57515
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 15.906339
+      - NodeIndex: 2
+        Weight: 4.8644724
+      - NodeIndex: 6
+        Weight: 13.681696
+      - NodeIndex: 9
+        Weight: 31.229126
+      - NodeIndex: 10
+        Weight: 17.689854
+      - NodeIndex: 11
+        Weight: 16.860598
+      - NodeIndex: 12
+        Weight: 11.671849
+      - NodeIndex: 13
+        Weight: 7.2281833
+      - NodeIndex: 14
+        Weight: 6.80738
+      - NodeIndex: 17
+        Weight: 12.760134
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 12.565237
+      - NodeIndex: 1
+        Weight: 4.8644724
+      - NodeIndex: 6
+        Weight: 11.877584
+      - NodeIndex: 10
+        Weight: 14.523166
+      - NodeIndex: 11
+        Weight: 14.73045
+      - NodeIndex: 12
+        Weight: 11.64355
+      - NodeIndex: 13
+        Weight: 11.1993885
+      - NodeIndex: 14
+        Weight: 9.660465
+      - NodeIndex: 17
+        Weight: 17.210245
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 19.436262
+      - NodeIndex: 8
+        Weight: 14.491359
+      - NodeIndex: 10
+        Weight: 26.03667
+      - NodeIndex: 11
+        Weight: 35.35226
+    - Nodes:
+      - NodeIndex: 5
+        Weight: 10.517348
+      - NodeIndex: 7
+        Weight: 13.978787
+      - NodeIndex: 9
+        Weight: 9.309196
+    - Nodes:
+      - NodeIndex: 4
+        Weight: 10.517348
+      - NodeIndex: 6
+        Weight: 11.775734
+      - NodeIndex: 7
+        Weight: 9.772367
+    - Nodes:
+      - NodeIndex: 1
+        Weight: 13.681696
+      - NodeIndex: 2
+        Weight: 11.877584
+      - NodeIndex: 5
+        Weight: 11.775734
+      - NodeIndex: 12
+        Weight: 23.467243
+      - NodeIndex: 13
+        Weight: 18.870314
+      - NodeIndex: 14
+        Weight: 20.370386
+      - NodeIndex: 17
+        Weight: 22.677666
+    - Nodes:
+      - NodeIndex: 4
+        Weight: 13.978787
+      - NodeIndex: 5
+        Weight: 9.772367
+      - NodeIndex: 8
+        Weight: 27.37946
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 14.491359
+      - NodeIndex: 7
+        Weight: 27.37946
+      - NodeIndex: 9
+        Weight: 16.839645
+      - NodeIndex: 10
+        Weight: 35.965927
+      - NodeIndex: 11
+        Weight: 45.095566
+      - NodeIndex: 12
+        Weight: 49.759586
+      - NodeIndex: 18
+        Weight: 69.28513
+    - Nodes:
+      - NodeIndex: 1
+        Weight: 31.229126
+      - NodeIndex: 4
+        Weight: 9.309196
+      - NodeIndex: 8
+        Weight: 16.839645
+      - NodeIndex: 10
+        Weight: 19.679216
+      - NodeIndex: 11
+        Weight: 29.331882
+      - NodeIndex: 12
+        Weight: 33.645412
+      - NodeIndex: 13
+        Weight: 38.40837
+      - NodeIndex: 18
+        Weight: 53.07479
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 8.908082
+      - NodeIndex: 1
+        Weight: 17.689854
+      - NodeIndex: 2
+        Weight: 14.523166
+      - NodeIndex: 3
+        Weight: 26.03667
+      - NodeIndex: 8
+        Weight: 35.965927
+      - NodeIndex: 9
+        Weight: 19.679216
+      - NodeIndex: 11
+        Weight: 9.9873905
+      - NodeIndex: 12
+        Weight: 14.885135
+      - NodeIndex: 13
+        Weight: 24.016573
+      - NodeIndex: 14
+        Weight: 19.170256
+      - NodeIndex: 17
+        Weight: 29.880339
+      - NodeIndex: 18
+        Weight: 33.415
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 17.149813
+      - NodeIndex: 1
+        Weight: 16.860598
+      - NodeIndex: 2
+        Weight: 14.73045
+      - NodeIndex: 3
+        Weight: 35.35226
+      - NodeIndex: 8
+        Weight: 45.095566
+      - NodeIndex: 9
+        Weight: 29.331882
+      - NodeIndex: 10
+        Weight: 9.9873905
+      - NodeIndex: 12
+        Weight: 7.854165
+      - NodeIndex: 13
+        Weight: 20.730078
+      - NodeIndex: 14
+        Weight: 14.779604
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 19.171528
+      - NodeIndex: 1
+        Weight: 11.671849
+      - NodeIndex: 2
+        Weight: 11.64355
+      - NodeIndex: 6
+        Weight: 23.467243
+      - NodeIndex: 8
+        Weight: 49.759586
+      - NodeIndex: 9
+        Weight: 33.645412
+      - NodeIndex: 10
+        Weight: 14.885135
+      - NodeIndex: 11
+        Weight: 7.854165
+      - NodeIndex: 13
+        Weight: 13.6600275
+      - NodeIndex: 14
+        Weight: 7.4031525
+      - NodeIndex: 18
+        Weight: 21.075794
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 23.107746
+      - NodeIndex: 1
+        Weight: 7.2281833
+      - NodeIndex: 2
+        Weight: 11.1993885
+      - NodeIndex: 6
+        Weight: 18.870314
+      - NodeIndex: 9
+        Weight: 38.40837
+      - NodeIndex: 10
+        Weight: 24.016573
+      - NodeIndex: 11
+        Weight: 20.730078
+      - NodeIndex: 12
+        Weight: 13.6600275
+      - NodeIndex: 14
+        Weight: 6.489867
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 20.347647
+      - NodeIndex: 1
+        Weight: 6.80738
+      - NodeIndex: 2
+        Weight: 9.660465
+      - NodeIndex: 6
+        Weight: 20.370386
+      - NodeIndex: 10
+        Weight: 19.170256
+      - NodeIndex: 11
+        Weight: 14.779604
+      - NodeIndex: 12
+        Weight: 7.4031525
+      - NodeIndex: 13
+        Weight: 6.489867
+      - NodeIndex: 15
+        Weight: 18.878782
+    - Nodes:
+      - NodeIndex: 14
+        Weight: 18.878782
+      - NodeIndex: 16
+        Weight: 13.087357
+      - NodeIndex: 18
+        Weight: 13.1403055
+    - Nodes:
+      - NodeIndex: 15
+        Weight: 13.087357
+      - NodeIndex: 17
+        Weight: 16.38907
+      - NodeIndex: 18
+        Weight: 26.193422
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 28.423252
+      - NodeIndex: 1
+        Weight: 12.760134
+      - NodeIndex: 2
+        Weight: 17.210245
+      - NodeIndex: 6
+        Weight: 22.677666
+      - NodeIndex: 10
+        Weight: 29.880339
+      - NodeIndex: 16
+        Weight: 16.38907
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 39.57515
+      - NodeIndex: 8
+        Weight: 69.28513
+      - NodeIndex: 9
+        Weight: 53.07479
+      - NodeIndex: 10
+        Weight: 33.415
+      - NodeIndex: 12
+        Weight: 21.075794
+      - NodeIndex: 15
+        Weight: 13.1403055
+      - NodeIndex: 16
+        Weight: 26.193422

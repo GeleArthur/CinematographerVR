@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e599dc55f98f75a488d5afe32978a55b, type: 3}
+  m_Name: RailData2
+  m_EditorClassIdentifier: 
+  Nodes:
+  - Position: {x: -22.752584, y: 2.8438454, z: -32.744274}
+  - Position: {x: -8.4620495, y: 3.765318, z: -38.88579}
+  - Position: {x: 2.8270588, y: 3.387086, z: -31.885502}
+  - Position: {x: -14.411121, y: 3.2060852, z: -55.505035}
+  - Position: {x: -16.15159, y: 4.9890127, z: -77.873985}
+  Connections:
+    m_Keys: 0000000001000000020000000300000004000000
+    m_Values:
+    - Nodes:
+      - NodeIndex: 1
+        Weight: 15.581615
+      - NodeIndex: 3
+        Weight: 24.243834
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 15.581615
+      - NodeIndex: 2
+        Weight: 13.288758
+    - Nodes:
+      - NodeIndex: 1
+        Weight: 13.288758
+    - Nodes:
+      - NodeIndex: 0
+        Weight: 24.243834
+      - NodeIndex: 4
+        Weight: 22.507288
+    - Nodes:
+      - NodeIndex: 3
+        Weight: 22.507288
