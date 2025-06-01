@@ -3,38 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Object = System.Object;
 
-class NodeRecord
-{
-    public int Node;
-    public float CostSoFar; // accumulated g-costs of all the connections leading up to this one
-    public float EstimatedTotalCost; // f-cost (= costSoFar + h-cost)
-    public float Hcost;
 
-    public NodeRecord(int node, float estimatedTotalCost, float costSoFar, float hcost)
-    {
-        Node = node;
-        Hcost = hcost;
-        EstimatedTotalCost = estimatedTotalCost;
-        CostSoFar = costSoFar;
-    }
-}
-
-public class CameraOnRail : MonoBehaviour
+[ExecuteInEditMode]
+public class CameraOnRail : MonoBehaviour, CameraScore
 {
     [SerializeField] private RailData _railData = null;
     [SerializeField] private Transform _target = null;
     [SerializeField] private float _speed = 0.1f;
 
+    private float _score = 0;
+    private bool _controllingCamera = false;
+
     private int _fromIndex = 0;
     private int _toIndex = 1;
     private float _distance = 0.0f;
+
+    private readonly SerializedDictionary<int, ListOfNode> _copyOfConnections = new();
 
     private void OnEnable()
     {
         _fromIndex = 0;
         _toIndex = 0;
         _distance = 0.0f;
+
+        // That moment when C# doesn't have copies. uhhhh
+        foreach (KeyValuePair<int, ListOfNode> pair in _railData.Connections)
+        {
+            _copyOfConnections[pair.Key] = new ListOfNode();
+            foreach (Connection connection in pair.Value.Nodes)
+            {
+                _copyOfConnections[pair.Key].Nodes.Add(new Connection(connection.NodeIndex, connection.Weight));
+            }
+        }
     }
 
     private void OnDrawGizmos()
@@ -59,6 +61,11 @@ public class CameraOnRail : MonoBehaviour
 
         Debug.DrawRay(transform.position, (_target.position - transform.position));
 
+
+    }
+
+    private void Update()
+    {
         Vector3 left = _target.position - transform.right;
         if (Physics.Raycast(_target.position, -transform.right, out RaycastHit hit))
         {
@@ -74,7 +81,7 @@ public class CameraOnRail : MonoBehaviour
         if (Physics.Raycast(transform.position, _target.position - transform.position) || 
             Physics.Raycast(transform.position, left - transform.position) ||
             Physics.Raycast(transform.position, right - transform.position)
-            )
+           )
         {
             MoveCamera();
         }
@@ -87,17 +94,8 @@ public class CameraOnRail : MonoBehaviour
     {
         (Node, Node, float) closest = GetClosestPointToTarget(_target.position);
 
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(Vector3.Lerp(closest.Item1.Position, closest.Item2.Position, closest.Item3), 0.3f);
-            
         int endNodeIndex = _railData.Nodes.FindIndex(e => e == closest.Item2);
         List<int> path = FindPathToNode(_fromIndex, endNodeIndex, _railData.Connections);
-
-        Gizmos.color = Color.red;
-        for (int i = 0; i < path.Count-1; i++)
-        {
-            Gizmos.DrawLine(_railData.Nodes[path[i]].Position, _railData.Nodes[path[i + 1]].Position);
-        }
         
         if (path.Count > 0)
         {
@@ -203,5 +201,26 @@ public class CameraOnRail : MonoBehaviour
         // }
         
         return (nodeFrom, nodeTo, offsetOnNode);
+    }
+
+    public void UpdateScore()
+    {
+        _score = 0;
+    }
+
+    public float GetScore()
+    {
+        return _score;
+    }
+
+    public void ControlCamera(Camera camera)
+    {
+        _controllingCamera = true;
+        // transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
+    }
+
+    public void SwappedCamera()
+    {
+        _controllingCamera = false;
     }
 }
