@@ -7,15 +7,14 @@ using Object = System.Object;
 
 
 [ExecuteInEditMode]
-public class CameraOnRail : MonoBehaviour, CameraScore
+public class CameraOnRail : MonoBehaviour
 {
-    [SerializeField] private RailData _railData = null;
-    [SerializeField] private Transform _target = null;
+    [SerializeField] private RailData _railData;
+    [SerializeField] private ReplayTarget _target;
     [SerializeField] private float _speed = 0.1f;
-
-    private float _score = 0;
-    private bool _controllingCamera = false;
-
+    
+    private PointOnRail[] _points;
+    
     private int _fromIndex = 0;
     private int _toIndex = 1;
     private float _distance = 0.0f;
@@ -24,9 +23,11 @@ public class CameraOnRail : MonoBehaviour, CameraScore
 
     private void OnEnable()
     {
-        _fromIndex = 0;
-        _toIndex = 0;
-        _distance = 0.0f;
+        _points = new PointOnRail[_railData.Nodes.Count];
+        for (int i = 0; i < _railData.Nodes.Count; i++)
+        {
+            _points[i] = new PointOnRail(_railData.Nodes[i], this);
+        }
 
         // That moment when C# doesn't have copies. uhhhh
         foreach (KeyValuePair<int, ListOfNode> pair in _railData.Connections)
@@ -49,7 +50,7 @@ public class CameraOnRail : MonoBehaviour, CameraScore
             foreach (var to in from.Value.Nodes)
             {
                 if(nodeChecked.Contains(to.NodeIndex)) break;
-                float distance = Vector3.Dot(_target.position - _railData.Nodes[from.Key].Position, 
+                float distance = Vector3.Dot(_target.transform.position - _railData.Nodes[from.Key].Position, 
                     (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized);
                 
                 if(distance < 0 || distance > (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).magnitude) continue;
@@ -59,42 +60,27 @@ public class CameraOnRail : MonoBehaviour, CameraScore
             }
         }
 
-        Debug.DrawRay(transform.position, (_target.position - transform.position));
+        Debug.DrawRay(transform.position, (_target.transform.position - transform.position));
 
 
     }
 
     private void Update()
     {
-        Vector3 left = _target.position - transform.right;
-        if (Physics.Raycast(_target.position, -transform.right, out RaycastHit hit))
+        foreach (PointOnRail point in _points)
         {
-            left = hit.point;
+            point.UpdateScore();
         }
-        
-        Vector3 right = _target.position + transform.right;
-        if (Physics.Raycast(_target.position, transform.right, out hit))
-        {
-            right = hit.point;
-        }
-        
-        if (Physics.Raycast(transform.position, _target.position - transform.position) || 
-            Physics.Raycast(transform.position, left - transform.position) ||
-            Physics.Raycast(transform.position, right - transform.position)
-           )
-        {
-            MoveCamera();
-        }
-        
-    
-        transform.LookAt(_target);
+
+        Array.Sort(_points, (point1, point2) => point1.GetScore().CompareTo(point2.GetScore()));
+        MoveCamera(_points[0].Node);
+
+        transform.LookAt(_target.transform);
     }
 
-    private void MoveCamera()
+    private void MoveCamera(Node moveHere)
     {
-        (Node, Node, float) closest = GetClosestPointToTarget(_target.position);
-
-        int endNodeIndex = _railData.Nodes.FindIndex(e => e == closest.Item2);
+        int endNodeIndex = _railData.Nodes.FindIndex(e => e == moveHere);
         List<int> path = FindPathToNode(_fromIndex, endNodeIndex, _railData.Connections);
         
         if (path.Count > 0)
@@ -161,66 +147,51 @@ public class CameraOnRail : MonoBehaviour, CameraScore
         return (_railData.Nodes[stop].Position - _railData.Nodes[start].Position).magnitude;
     }
     
-    private (Node, Node, float) GetClosestPointToTarget(Vector3 target)
-    {
-        Node nodeFrom = null;
-        Node nodeTo = null;
-        float offsetOnNode = 0;
-        float distanceResult = float.MaxValue;
-        
-        foreach (Node node in _railData.Nodes)
-        {
-            float dist = (target - node.Position).sqrMagnitude;
-            if (dist < distanceResult)
-            {
-                distanceResult = dist;
-                nodeFrom = node;
-                nodeTo = node;
-            }
-        }
-        
-        // foreach (var from in _railData.Connections)
-        // {
-        //     foreach (var to in from.Value.Nodes)
-        //     {
-        //         float distance = Vector3.Dot(_target.position - _railData.Nodes[from.Key].Position, 
-        //             (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized);
-        //         
-        //         if(distance < 0 || distance > (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).magnitude) continue;
-        //         
-        //         Vector3 pointOnLine = _railData.Nodes[from.Key].Position + (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized * distance;
-        //         float dist = (target - pointOnLine).sqrMagnitude;
-        //         if (dist < distanceResult)
-        //         {
-        //             distanceResult = dist;
-        //             offsetOnNode = distance;
-        //             nodeFrom = _railData.Nodes[from.Key];
-        //             nodeTo = _railData.Nodes[to.NodeIndex];
-        //         }
-        //     }
-        // }
-        
-        return (nodeFrom, nodeTo, offsetOnNode);
-    }
+    // private (Node, Node, float) GetClosestPointToTarget(Vector3 target)
+    // {
+    //
+    //     // foreach (var from in _railData.Connections)
+    //     // {
+    //     //     foreach (var to in from.Value.Nodes)
+    //     //     {
+    //     //         float distance = Vector3.Dot(_target.position - _railData.Nodes[from.Key].Position, 
+    //     //             (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized);
+    //     //         
+    //     //         if(distance < 0 || distance > (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).magnitude) continue;
+    //     //         
+    //     //         Vector3 pointOnLine = _railData.Nodes[from.Key].Position + (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized * distance;
+    //     //         float dist = (target - pointOnLine).sqrMagnitude;
+    //     //         if (dist < distanceResult)
+    //     //         {
+    //     //             distanceResult = dist;
+    //     //             offsetOnNode = distance;
+    //     //             nodeFrom = _railData.Nodes[from.Key];
+    //     //             nodeTo = _railData.Nodes[to.NodeIndex];
+    //     //         }
+    //     //     }
+    //     // }
+    //     
+    //     // return (nodeFrom, nodeTo, offsetOnNode);
+    // }
 
-    public void UpdateScore()
-    {
-        _score = 0;
-    }
-
-    public float GetScore()
-    {
-        return _score;
-    }
-
-    public void ControlCamera(Camera camera)
-    {
-        _controllingCamera = true;
-        // transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
-    }
-
-    public void SwappedCamera()
-    {
-        _controllingCamera = false;
-    }
+    // public void UpdateScore()
+    // {
+    //     _score = 0;
+    // }
+    //
+    // public float GetScore()
+    // {
+    //     return _score;
+    // }
+    //
+    // public void ControlCamera(Camera camera)
+    // {
+    //     _controllingCamera = true;
+    //     // transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
+    // }
+    //
+    // public void SwappedCamera()
+    // {
+    //     _controllingCamera = false;
+    // }
 }
