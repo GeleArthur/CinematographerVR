@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _railData: {fileID: 11400000, guid: 1ffabfd137231c34997950393b6d7a77, type: 2}
   _target: {fileID: 467440742}
-  _speed: 6.28
+  _speed: 15
 --- !u!114 &184301847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,8 +374,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184301845}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000781687, y: 0.9839818, z: -0.17821527, w: -0.004315936}
-  m_LocalPosition: {x: -23.125881, y: 3.4844356, z: -63.940975}
+  m_LocalRotation: {x: 0.07139833, y: -0.5294205, z: 0.04477777, w: 0.844163}
+  m_LocalPosition: {x: -0.62270415, y: 3.109168, z: -80.83806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -692,7 +692,7 @@ Transform:
   m_GameObject: {fileID: 467440737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.2, y: 0.32, z: -72.39}
+  m_LocalPosition: {x: -15.36, y: 0.32, z: -73.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1226,6 +1226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000227788}
+  - component: {fileID: 2000227789}
   m_Layer: 0
   m_Name: Atlas_atlased
   m_TagString: Untagged
@@ -1255,6 +1256,41 @@ Transform:
   - {fileID: 2006620339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &2000227789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000227786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7cd6b0c86273544aeb70cdf8e88c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _materials:
+  - {fileID: 2100000, guid: d0a7d4ad7204051409d4669fb1f7e5ba, type: 2}
+  - {fileID: 2100000, guid: 1ce7d3cdb3d5df64480d360e32abd41f, type: 2}
+  _textures:
+  - {fileID: 2800000, guid: 55f7b4f3e4060bc448c37c5bf376d602, type: 3}
+  - {fileID: 2800000, guid: 46dd7e446b1ce92458e7dcd66d318a2a, type: 3}
+  - {fileID: 2800000, guid: 033dcc325a550c54c8a7f22c25263d20, type: 3}
+  - {fileID: 2800000, guid: d409496074d306a4cbc41b4d59cd3a55, type: 3}
+  - {fileID: 2800000, guid: 60834de9441023d4b8be629857e0a78e, type: 3}
+  - {fileID: 2800000, guid: b338b7bea257809458385695f95c4e0e, type: 3}
+  - {fileID: 2800000, guid: 5ed422d16d52ba543b0f61248eb3894c, type: 3}
+  - {fileID: 2800000, guid: 1807677669829f741aba475ed20fb8cc, type: 3}
+  - {fileID: 2800000, guid: 8a549aa8fd6a804409ed0602cd410a9b, type: 3}
+  - {fileID: 2800000, guid: d805727a584196e4887abe3f036fb976, type: 3}
+  - {fileID: 2800000, guid: 7e294c609f97e374d85be0875fa2f5c5, type: 3}
+  - {fileID: 2800000, guid: de39d7ea6894e944aa474816c95cdcf0, type: 3}
+  - {fileID: 2800000, guid: 2015ba1c345e6ca41b001010c76cfc4f, type: 3}
+  - {fileID: 2800000, guid: b5c1fcb1c8e64cb46871d2558d151de9, type: 3}
+  - {fileID: 2800000, guid: 857484bd65a33884c8601ffff5fc3d2a, type: 3}
+  - {fileID: 2800000, guid: 69ebafcbd57eed84a9f2a35882273936, type: 3}
+  - {fileID: 2800000, guid: 12c588c1136fed441ab714917c5da565, type: 3}
+  - {fileID: 2800000, guid: 0c88a910e4e173946adb11fb7448cc66, type: 3}
+  - {fileID: 2800000, guid: 47578a91312330242be803f22b8c86c0, type: 3}
 --- !u!1 &2006620338
 GameObject:
   m_ObjectHideFlags: 0

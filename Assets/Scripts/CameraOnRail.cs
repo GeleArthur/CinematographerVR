@@ -18,7 +18,7 @@ public class CameraOnRail : MonoBehaviour
     private PointOnRail[] _points = Array.Empty<PointOnRail>();
     public ReplayTarget Target => _target;
     
-    private int _fromIndex = 0;
+    private int _fromIndex = 25;
 
     private readonly SerializedDictionary<int, ListOfNode> _copyOfConnections = new();
 
