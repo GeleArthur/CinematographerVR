@@ -11,11 +11,13 @@ public class AtlasTextureGenerator : MonoBehaviour
     private void OnEnable()
     {
         if(_textures.Length <= 0) return;
-        if(_textureArray == null) return;
-        _textureArray = new Texture2DArray(_textures[0].width, _textures[0].height, _textures.Length, TextureFormat.BC7, false);
-        for (int i = 0; i < _textures.Length; i++)
+        if (_textureArray == null)
         {
-            Graphics.CopyTexture(_textures[i], 0, 0, _textureArray, i, 0);
+            _textureArray = new Texture2DArray(_textures[0].width, _textures[0].height, _textures.Length, TextureFormat.BC7, false);
+            for (int i = 0; i < _textures.Length; i++)
+            {
+                Graphics.CopyTexture(_textures[i], 0, 0, _textureArray, i, 0);
+            }
         }
 
         foreach (Material material in _materials)

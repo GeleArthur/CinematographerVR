@@ -81,7 +81,7 @@ public class CameraOnRail : MonoBehaviour
         Array.Sort(_points, (point1, point2) => point2.GetScore().CompareTo(point1.GetScore()));
         MoveCamera(_points[0].Node);
 
-        transform.LookAt(_target.transform);
+        transform.LookAt(_target.transform.position + Vector3.up);
     }
 
     private void MoveCamera(Node moveHere)
