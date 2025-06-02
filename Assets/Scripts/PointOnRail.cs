@@ -9,7 +9,7 @@ public class PointOnRail
     }
     
     public Node Node { get; private set; }
-    private CameraOnRail _owner;
+    private readonly CameraOnRail _owner;
     private float _score = 0;
     private float _canSeeTargetTime = 0;
     
@@ -19,7 +19,7 @@ public class PointOnRail
         if (!Physics.Raycast(Node.Position, toTarget.normalized, out RaycastHit hit, toTarget.magnitude))
         {
             _score = 0;
-            _canSeeTargetTime = Mathf.Clamp01(_canSeeTargetTime + Time.deltaTime);
+            _canSeeTargetTime = Mathf.Clamp01(_canSeeTargetTime + Time.deltaTime / 10.0f);
 
             float dist = (toTarget).magnitude;
             float distanceScore = MathHelper.Map(dist, 0, 100, 1, 0);
@@ -33,12 +33,6 @@ public class PointOnRail
             float angleCamera = Mathf.Atan2(_owner.transform.forward.z, _owner.transform.forward.x) * Mathf.Rad2Deg;
             float diffYaw = Mathf.Abs(Mathf.DeltaAngle(angle, angleCamera));
             float scoreYaw = Mathf.Clamp01(1f - diffYaw / 180f);
-            
-            
-            // float diffAngleYaw = Mathf.Abs(
-            //     Mathf.DeltaAngle(Mathf.Asin(toTarget.normalized.y) * Mathf.Rad2Deg, 
-            //         -15));
-            // float scoreYaw = Mathf.Clamp01(1f - diffAngleYaw / 180f);
             
             _score += scorePitch;
             _score += scoreYaw;
@@ -55,11 +49,5 @@ public class PointOnRail
     public float GetScore()
     {
         return _score;
-    }
-    
-
-    public void SwappedCamera()
-    {
-        
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 public class UtitlyController : MonoBehaviour
 {
-    [SerializeField] private ReplayTarget _mainTarget;
+    [SerializeField] private ReplayTarget _mainTarget = null;
     private CameraOnRail _cameraOnRail;
     
     public ReplayTarget MainTarget => _mainTarget;
@@ -13,6 +13,7 @@ public class UtitlyController : MonoBehaviour
     {
         _cameraOnRail = FindObjectsByType<CameraOnRail>(FindObjectsSortMode.None)[0];
     }
+    
 
     void Update()
     {

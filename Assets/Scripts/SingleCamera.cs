@@ -3,7 +3,7 @@ using System.Globalization;
 using UnityEditor;
 using UnityEngine;
 
-public class SingleCamera : MonoBehaviour, CameraScore
+public class SingleCamera : MonoBehaviour
 {
     public float Score;
     public UtitlyController Owner { private get; set; }

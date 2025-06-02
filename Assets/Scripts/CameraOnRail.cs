@@ -11,16 +11,14 @@ using Object = System.Object;
 [ExecuteInEditMode]
 public class CameraOnRail : MonoBehaviour
 {
-    [SerializeField] private RailData _railData;
-    [SerializeField] private ReplayTarget _target;
+    [SerializeField] private RailData _railData = null;
+    [SerializeField] private ReplayTarget _target = null;
     [SerializeField] private float _speed = 0.1f;
     
     private PointOnRail[] _points = Array.Empty<PointOnRail>();
     public ReplayTarget Target => _target;
     
     private int _fromIndex = 0;
-    private int _toIndex = 1;
-    private float _distance = 0.0f;
 
     private readonly SerializedDictionary<int, ListOfNode> _copyOfConnections = new();
 
@@ -71,8 +69,6 @@ public class CameraOnRail : MonoBehaviour
         {
             Handles.Label(pointOnRail.Node.Position + Vector3.up, pointOnRail.GetScore().ToString(CultureInfo.InvariantCulture), style);
         }
-
-        
     }
 
     private void Update()
@@ -156,52 +152,4 @@ public class CameraOnRail : MonoBehaviour
     {
         return (_railData.Nodes[stop].Position - _railData.Nodes[start].Position).magnitude;
     }
-    
-    // private (Node, Node, float) GetClosestPointToTarget(Vector3 target)
-    // {
-    //
-    //     // foreach (var from in _railData.Connections)
-    //     // {
-    //     //     foreach (var to in from.Value.Nodes)
-    //     //     {
-    //     //         float distance = Vector3.Dot(_target.position - _railData.Nodes[from.Key].Position, 
-    //     //             (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized);
-    //     //         
-    //     //         if(distance < 0 || distance > (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).magnitude) continue;
-    //     //         
-    //     //         Vector3 pointOnLine = _railData.Nodes[from.Key].Position + (_railData.Nodes[to.NodeIndex].Position - _railData.Nodes[from.Key].Position).normalized * distance;
-    //     //         float dist = (target - pointOnLine).sqrMagnitude;
-    //     //         if (dist < distanceResult)
-    //     //         {
-    //     //             distanceResult = dist;
-    //     //             offsetOnNode = distance;
-    //     //             nodeFrom = _railData.Nodes[from.Key];
-    //     //             nodeTo = _railData.Nodes[to.NodeIndex];
-    //     //         }
-    //     //     }
-    //     // }
-    //     
-    //     // return (nodeFrom, nodeTo, offsetOnNode);
-    // }
-
-    // public void UpdateScore()
-    // {
-    //     _score = 0;
-    // }
-    //
-    // public float GetScore()
-    // {
-    //     return _score;
-    // }
-    //
-    // public void ControlCamera(Camera camera)
-    // {
-    //     _controllingCamera = true;
-    //     // transform.position = Vector3.MoveTowards(transform.position, _railData.Nodes[path[0]].Position, Time.deltaTime * _speed);
-    // }
-    //
-    // public void SwappedCamera()
-    // {
-    //     _controllingCamera = false;
-    // }
 }
