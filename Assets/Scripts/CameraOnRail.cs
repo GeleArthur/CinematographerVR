@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Object = System.Object;
@@ -13,7 +15,8 @@ public class CameraOnRail : MonoBehaviour
     [SerializeField] private ReplayTarget _target;
     [SerializeField] private float _speed = 0.1f;
     
-    private PointOnRail[] _points;
+    private PointOnRail[] _points = Array.Empty<PointOnRail>();
+    public ReplayTarget Target => _target;
     
     private int _fromIndex = 0;
     private int _toIndex = 1;
@@ -61,8 +64,15 @@ public class CameraOnRail : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, (_target.transform.position - transform.position));
+        GUIStyle style = new GUIStyle(GUI.skin.label);
+        style.fontSize = 32;
+        
+        foreach (PointOnRail pointOnRail in _points)
+        {
+            Handles.Label(pointOnRail.Node.Position + Vector3.up, pointOnRail.GetScore().ToString(CultureInfo.InvariantCulture), style);
+        }
 
-
+        
     }
 
     private void Update()
@@ -72,7 +82,7 @@ public class CameraOnRail : MonoBehaviour
             point.UpdateScore();
         }
 
-        Array.Sort(_points, (point1, point2) => point1.GetScore().CompareTo(point2.GetScore()));
+        Array.Sort(_points, (point1, point2) => point2.GetScore().CompareTo(point1.GetScore()));
         MoveCamera(_points[0].Node);
 
         transform.LookAt(_target.transform);
